@@ -1,0 +1,270 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    font-family: "Inter", sans-serif;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: unset;
+    color: unset;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.site-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* NAV BAR */
+header {
+    height: 110px;
+    display: flex;
+    align-items: center;
+    padding-block: 10px;
+    padding-inline: 20px;
+    position: relative;
+}
+
+header .site-logo {
+    color: black;
+    margin-right: auto;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 25px;
+}
+
+header a {
+    text-decoration: none;
+    color: #4d4d4d;
+    font-weight: 600;
+    padding: 5px 20px;
+}
+
+header a:hover {
+    color: #161616;
+    text-decoration: underline;
+}
+
+header .login-icon {
+    height: 60px;
+    width: 60px;
+}
+
+header .login-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        margin-left: auto;
+    }
+
+    .hamburger {
+        width: 25px;
+        height: 3px;
+        background-color: #000;
+        margin: 4px 0;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 110px;
+        right: 20px;
+        background-color: #f8f9fa;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        width: calc(100% - 40px);
+        max-width: 300px;
+        padding: 1rem;
+        z-index: 1000;
+    }
+
+    nav.open {
+        display: flex;
+        align-items: center;
+    }
+
+    nav a {
+        padding: 10px;
+        text-align: center;
+        width: 100%;
+    }
+}
+
+main {
+    margin-bottom: 84px;
+}
+
+
+
+
+/*** HOME PAGE ***/
+/* .home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 350px;
+    color: black;
+    /* padding: 45px 23px; */
+
+
+.home-container h1 {
+    font-weight: 700;
+    font-size: 2.25rem;
+    line-height: 42px;
+}
+
+.home-container p {
+    line-height: 24px;
+}
+
+.home-container a {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    background-color: #ff8c38;
+    border: none;
+    width: 100%;
+    margin-top: 27px;
+    padding-block: 0.75rem;
+    color: white;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.1s ease-in-out;
+}
+
+.home-container a:hover {
+    transform: translate(1px, 1px);
+}
+
+.section-3 {
+    background-color: #ECFFE6;
+}
+
+.para {
+    text-align: left;
+}
+
+.section-2 {
+    text-align: center;
+}
+
+.img {
+    height: 90%;
+    width: 80%;
+    object-fit: fill;
+}
+
+.c-item {
+    height: 100vh;
+  }
+  
+  .c-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+  }
+  
+
+
+.active-link {
+  background-color: lightgreen !important;
+  color: white !important;
+}
+
+
+/* Admin Panel CSS */
+
+/* DonationList.css */
+
+.donation-table th, .donation-table td {
+    vertical-align: middle;
+    text-align: center;
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .actions .btn {
+    margin: 0 5px;
+  }
+/* AdminPanel.css */
+
+.sidebar {
+    height: 100vh;
+    padding-top: 20px;
+    background-color: #f8f9fa;
+  }
+  
+  .sidebar .nav-link {
+    margin: 10px 0;
+    color: #000;
+    font-weight: 500;
+  }
+  
+  .sidebar .nav-link.active {
+    font-weight: bold;
+    color: #28a745;
+  }
+  
+  .content {
+    padding: 20px;
+  }
+  
+  .table td, .table th {
+    vertical-align: middle;
+  }
+  
+  @media (max-width: 768px) {
+    .sidebar {
+      height: auto;
+      padding: 10px 0;
+    }
+    
+    .sidebar .nav-link {
+      margin: 5px 0;
+    }
+    
+    .content {
+      padding: 10px;
+    }
+  }
+  

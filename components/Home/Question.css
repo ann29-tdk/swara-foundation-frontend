@@ -1,0 +1,26 @@
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .faq-item {
+    width: 80%;
+    margin-bottom: 1rem;
+  }
+  
+  .faq-question {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .faq-button {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .faq-answer {
+    width: 100%;
+  }
+  
