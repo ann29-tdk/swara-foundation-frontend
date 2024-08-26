@@ -325,7 +325,7 @@ const OurWork = () => {
                 </ImageWrapper>
               ))}
             </GalleryContainer>
-            <h3>Upcoming Activities</h3>
+            <h3>Upcoming Activities in few weeks</h3>
             <p>Swara Foundation is organizing a donation camp to collect essential items for those in need. We invite you to join us in this noble cause by donating gently used clothes, shoes, toys, and stationery. Your contributions will go a long way in bringing smiles to the faces of the less fortunate. Every item you donate will be carefully distributed to those who need it most, helping to improve their lives and brighten their days. Let’s come together to make a difference and spread joy. For more information, please contact us at <span style={{ color: 'blue' }}>swarafoundationdel@gmail.com</span>
             </p>
           </UpcomingActivities>
