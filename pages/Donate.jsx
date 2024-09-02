@@ -1,3 +1,4 @@
+import qr from "../assets/images/upi.png"
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -308,7 +309,7 @@ const Donate = () => {
       <DonateSection>
         <LeftHalf>
           <SubHeading>Importance of Donation</SubHeading>
-          <QRCode src="https://as2.ftcdn.net/v2/jpg/04/86/91/81/1000_F_486918185_Sp2VXc2d6BwvRLFnFrS1Jmd0lRVTNBtK.jpg" alt="UPI QR Code" />
+          <QRCode src={qr} alt="UPI QR Code" />
           <Description>Scan the QR code to donate. Your generosity helps us reach more people in need.</Description>
         </LeftHalf>
         <RightHalf>
