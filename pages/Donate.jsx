@@ -246,7 +246,7 @@ const Donate = () => {
 
   const checkAvailability = async () => {
     try {
-      const response = await axios.get(`${import.meta.env.REACT_APP_BACKEND_URL}/check-availability`, {
+      const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/check-availability`, {
         params: { date: formData.date, timeSlot: formData.timeSlot, pincode: formData.pincode }
       });
       return response.data.available;
@@ -292,7 +292,7 @@ const Donate = () => {
     }
 
     try {
-      const response = await axios.post(`${process.env.BACKEND_URL}`, formData);
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}`, formData);
       console.log('Server response:', response);
   
       if (response.status === 201) {
