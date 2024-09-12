@@ -316,13 +316,7 @@ const OurWork = () => {
           <UpcomingActivities>
             <GalleryContainer>
               {upcomingImages.map((img, index) => (
-                <ImageWrapper
-                  key={index}
-                  data-description={img.description}
-                  onClick={() => openModal(index, true)}
-                >
-                  <img src={img.src} alt={`Work ${index + 1}`} />
-                </ImageWrapper>
+                <img src={banner} alt="upcoming-event" style={{ width: '500px', height: '300px', marginBottom: '1rem' }} />
               ))}
             </GalleryContainer>
             <h3>Upcoming Activities in few weeks</h3>

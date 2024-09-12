@@ -315,15 +315,21 @@ const Donate = () => {
         <RightHalf>
           <SubHeading>Check Availability in Your Area</SubHeading>
           <CheckSection>
-            <form>
-              <StyledInput 
-                type="text" 
-                value={pincode} 
-                onChange={(e) => setPincode(e.target.value)} 
-                placeholder="Enter your 6-digit pincode" 
-              />
-              <CheckButton type="button" onClick={handlePincodeCheck}>Check</CheckButton>
-            </form>
+          <form
+  onSubmit={(e) => {
+    e.preventDefault(); // Prevent the default form submission behavior
+    handlePincodeCheck(); // Call the same function as the button click
+  }}
+>
+  <StyledInput 
+    type="text" 
+    value={pincode} 
+    onChange={(e) => setPincode(e.target.value)} 
+    placeholder="Enter your 6-digit pincode" 
+  />
+  <CheckButton type="submit">Check</CheckButton>
+</form>
+
             {isValidPincode === false && (
               <Alert variant="warning">Sorry, we are not available in your area yet. Ship your donations here: A-18, GROUND FLOOR, VIKAS VIHAR, KAKROLA, DWARKA SECTOR-15, NEW DELHI-110078</Alert>
             )}
