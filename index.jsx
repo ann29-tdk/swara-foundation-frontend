@@ -18,7 +18,7 @@ function App() {
   return (
     <Auth0Provider
       domain="dev-muwfwfnberurulc5.us.auth0.com"
-      clientId="iagrYgAp73mePK3kjbdDupakgkaYn80N"
+      clientId={import.meta.env.REACT_APP_AUTH0_KEY}
       authorizationParams={{
         redirect_uri: window.location.origin + '/admin',
       }}

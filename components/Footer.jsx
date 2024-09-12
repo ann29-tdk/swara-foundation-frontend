@@ -50,8 +50,7 @@ export default function Footer() {
             </EndingText>
 
             <IconContainer>
-                <Icon className="fab fa-facebook" aria-hidden="true"></Icon>
-                <Icon className="fab fa-twitter" aria-hidden="true"></Icon>
+                <a href='https://www.facebook.com/profile.php?id=100068099547129' style={{textDecoration:'none', color:'black'}}><Icon className="fab fa-facebook" aria-hidden="true"></Icon></a>
                 <Icon className="fab fa-instagram" aria-hidden="true"></Icon>
                 <Icon className="fas fa-envelope" aria-hidden="true"></Icon>
             </IconContainer>

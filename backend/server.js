@@ -23,7 +23,7 @@ app.use('/api/donations', donationRoutes);
 
 const PORT = process.env.PORT || 5000;
 
-mongoose.connect("mongodb+srv://annie29:anurag@cluster0.oo3kmna.mongodb.net/donation").then(() => {
+mongoose.connect(process.env.MONGO_URL).then(() => {
   console.log('MongoDB connected successfully');
   server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 }).catch(err => {

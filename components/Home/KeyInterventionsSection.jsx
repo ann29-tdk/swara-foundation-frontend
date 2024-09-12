@@ -1,4 +1,8 @@
 import React from 'react';
+import h1 from '../../assets/images/h-1.png'
+import h2 from '../../assets/images/h-2.png'
+import h3 from '../../assets/images/h-3.png'
+import h4 from '../../assets/images/h-4.png'
 
 const KeyInterventionsSection = () => {
   const sectionStyle = {
@@ -14,7 +18,8 @@ const KeyInterventionsSection = () => {
 
   const imgStyle = {
     maxWidth: '80%',
-    height: 'auto'
+    height: '350px',
+    width:'400px'
   };
 
   const rowStyle = {
@@ -29,32 +34,32 @@ const KeyInterventionsSection = () => {
         <div className="row">
           <div className="col">
             <img
-              src="https://img.freepik.com/premium-vector/education-school-logo-design_586739-1335.jpg"
+              src={h1}
               style={imgStyle}
               alt="Education Support"
             />
           </div>
           <div className="col">
             <img
-              src="https://img.freepik.com/free-vector/flat-international-women-s-day-badges-collection_23-2149260642.jpg"
+              src={h2}
               style={imgStyle}
-              alt="Women's Empowerment"
+              alt="Food Sharing"
             />
           </div>
         </div>
         <div className="row" style={rowStyle}>
           <div className="col">
             <img
-              src="https://www.shutterstock.com/image-vector/illustration-icon-food-sharing-donation-600nw-2229819277.jpg"
+              src={h3}
               style={imgStyle}
-              alt="Food Sharing"
+              alt="Education Support"
             />
           </div>
           <div className="col">
             <img
-              src="https://img.freepik.com/free-vector/charity-life-abstract-logo_1043-47.jpg"
+              src={h4}
               style={imgStyle}
-              alt="Charity Life"
+              alt="Plantation Drive"
             />
           </div>
         </div>

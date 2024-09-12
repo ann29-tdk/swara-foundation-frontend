@@ -14,7 +14,7 @@ const AdminPanel = () => {
 
   const handleDownload = async (selectedColumns) => {
     try {
-      const response = await fetch('https://swara-foundation-backend.onrender.com/api/donations/download/excel', {
+      const response = await fetch(`${import.meta.env.REACT_APP_BACKEND_URL}/download/excel`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -41,7 +41,7 @@ const AdminPanel = () => {
 
   const sendEmails = async (message) => {
     try {
-      const response = await fetch('https://swara-foundation-backend.onrender.com/api/donations/send-emails', {
+      const response = await fetch(`${import.meta.env.REACT_APP_BACKEND_URL}/send-emails`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

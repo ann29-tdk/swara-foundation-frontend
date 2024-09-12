@@ -8,7 +8,7 @@ import DonationTable from '../../components/Admin/DonationTable';
 import EditDonationModal from '../../components/Admin/EditDonationModal';
 import WarningModal from '../../components/Admin/WarningModal';
 
-const socket = io('https://swara-foundation-backend.onrender.com'); // Adjust the URL as necessary
+const socket = io(`${import.meta.env.REACT_APP_SOCKET_URL}`); // Adjust the URL as necessary
 
 const DonationList = ({ type }) => {
   const [donations, setDonations] = useState([]);
@@ -23,7 +23,7 @@ const DonationList = ({ type }) => {
 
   const fetchDonations = async () => {
     try {
-      const response = await axios.get('https://swara-foundation-backend.onrender.com/api/donations');
+      const response = await axios.get(`${import.meta.env.REACT_APP_BACKEND_URL}`);
       setDonations(response.data);
     } catch (error) {
       console.error('Error fetching donations', error);
@@ -47,7 +47,7 @@ const DonationList = ({ type }) => {
 
   const deleteDonation = async (id) => {
     try {
-      await axios.put(`https://swara-foundation-backend.onrender.com/api/donations/${id}/delete`);
+      await axios.put(`${import.meta.env.REACT_APP_BACKEND_URL}/${id}/delete`);
       fetchDonations();
       toast.success('Moved to trash');
     } catch (error) {
@@ -57,7 +57,7 @@ const DonationList = ({ type }) => {
 
   const completeDonation = async (id) => {
     try {
-      await axios.put(`https://swara-foundation-backend.onrender.com/api/donations/${id}/complete`);
+      await axios.put(`${import.meta.env.REACT_APP_BACKEND_URL}/${id}/complete`);
       fetchDonations();
       toast.success('Marked as completed');
     } catch (error) {
@@ -67,7 +67,7 @@ const DonationList = ({ type }) => {
 
   const restoreDonation = async (id) => {
     try {
-      await axios.put(`https://swara-foundation-backend.onrender.com/api/donations/${id}/restore`);
+      await axios.put(`${import.meta.env.REACT_APP_BACKEND_URL}/${id}/restore`);
       fetchDonations();
       toast.success('Restored from trash');
     } catch (error) {
@@ -127,7 +127,7 @@ const DonationList = ({ type }) => {
 
   const handleSaveChanges = async () => {
     try {
-      await axios.put(`https://swara-foundation-backend.onrender.com/api/donations/${editDonation._id}`, editDonation);
+      await axios.put(`${import.meta.env.REACT_APP_BACKEND_URL}/${editDonation._id}`, editDonation);
       fetchDonations();
       setShowEditModal(false);
       toast.success('Donation updated successfully');

@@ -127,6 +127,24 @@ const InputGroupText = styled.span`
   border-radius: 5px 0 0 5px;
 `;
 
+const BankDetails = styled.div`
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+
+  p {
+    margin: 5px 0;
+  }
+
+  strong {
+    font-weight: 600;
+  }
+`;
+
+
 const FormGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -228,7 +246,7 @@ const Donate = () => {
 
   const checkAvailability = async () => {
     try {
-      const response = await axios.get('https://swara-foundation-backend.onrender.com/api/donations/check-availability', {
+      const response = await axios.get(`${import.meta.env.REACT_APP_BACKEND_URL}/check-availability`, {
         params: { date: formData.date, timeSlot: formData.timeSlot, pincode: formData.pincode }
       });
       return response.data.available;
@@ -274,7 +292,7 @@ const Donate = () => {
     }
 
     try {
-      const response = await axios.post('https://swara-foundation-backend.onrender.com/api/donations', formData);
+      const response = await axios.post(`${process.env.BACKEND_URL}`, formData);
       console.log('Server response:', response);
   
       if (response.status === 201) {
@@ -307,11 +325,20 @@ const Donate = () => {
       <Heading>Help Us Empower Lives: Give Today</Heading>
       <Description>Your generous donations of clothing, monetary contributions, or books can create a profound impact on those in need. As an established organization dedicated to making a difference, we invite you to support our mission by contributing items in usable condition. We accept a variety of essential items, including <b>clothing, toys, shoes, blankets, stationery, bedsheets, non-perishable food, school supplies, water bottles, and lunchboxes</b>. Join us in our ongoing efforts to uplift and support our community—your contributions truly make a difference.</Description>
       <DonateSection>
-        <LeftHalf>
-          <SubHeading>Importance of Donation</SubHeading>
-          <QRCode src={qr} alt="UPI QR Code" />
-          <Description>Scan the QR code to donate. Your generosity helps us reach more people in need.</Description>
-        </LeftHalf>
+      <LeftHalf>
+  <SubHeading>Importance of Donation</SubHeading>
+  <QRCode src={qr} alt="UPI QR Code" />
+  <Description>Scan the QR code to donate. Your generosity helps us reach more people in need.</Description>
+  
+  <BankDetails>
+  <p><strong>Account Name: </strong>Swara Foundation</p>
+    <p><strong>Bank Name:</strong> AXIS BANK LTD</p>
+    <p><strong>Branch:</strong> DWARKA, DELHI, NEW DELHI, 110075</p>
+    <p><strong>IFSC Code:</strong> UTIB0000278</p>
+    <p><strong>Account No:</strong> 919010047692460</p>
+  </BankDetails>
+</LeftHalf>
+
         <RightHalf>
           <SubHeading>Check Availability in Your Area</SubHeading>
           <CheckSection>

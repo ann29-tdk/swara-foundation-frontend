@@ -18,13 +18,13 @@ module.exports = function (io) {
         const transporter = nodemailer.createTransport({
           service: 'Gmail',
           auth: {
-            user: 'eliopace68@gmail.com',
-            pass: 'wouo tbjd wayt oeek' // Direct use as specified
+            user: process.env.NODE_EMAIL,
+            pass: process.env.NODE_PASS // Direct use as specified
           }
         });
 
         const mailOptions = {
-          from: 'eliopace68@gmail.com',
+          from: process.env.NODE_EMAIL,
           to: newDonation.email,
           subject: 'Thank you for your donation',
           html: `<div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd;">
@@ -44,7 +44,7 @@ module.exports = function (io) {
   </section>
   <footer style="text-align: center; padding: 10px 0; border-top: 1px solid #ddd;">
     <p style="margin: 10px 0;">Stay connected with us:</p>
-    <a href="https://www.facebook.com/swarafoundation" style="margin: 0 10px;">
+    <a href="https://www.facebook.com/profile.php?id=100068099547129" style="margin: 0 10px;">
       <img src="https://img.icons8.com/color/48/000000/facebook.png" alt="Facebook" style="max-height: 30px;">
     </a>
     <a href="https://www.instagram.com/swarafoundation" style="margin: 0 10px;">
@@ -197,15 +197,15 @@ module.exports = function (io) {
         const transporter = nodemailer.createTransport({
           service: 'Gmail',
           auth: {
-            user: 'eliopace68@gmail.com',
-            pass: 'wouo tbjd wayt oeek' // Replace with actual password
+            user: process.env.NODE_EMAIL,
+            pass: process.env.NODE_PASS // Replace with actual password
           }
         });
     
         // Function to send email in batches
         const sendEmailBatch = async (batch) => {
           const mailOptions = {
-            from: 'eliopace68@gmail.com',
+            from: process.env.NODE_EMAIL,
             to: batch.join(','), // Join emails into a comma-separated string
             subject: 'Upcoming Event Notification',
             html: `
@@ -219,7 +219,7 @@ module.exports = function (io) {
             </section>
                 <footer style="text-align: center; padding: 10px 0; border-top: 1px solid #ddd;">
               <p style="margin: 10px 0;">Follow us on:</p>
-              <a href="https://www.facebook.com/swarafoundation" style="margin: 0 10px;">
+              <a href="https://www.facebook.com/profile.php?id=100068099547129" style="margin: 0 10px;">
                 <img src="https://img.icons8.com/color/48/000000/facebook.png" alt="Facebook" style="max-height: 30px;">
               </a>
               <a href="https://www.instagram.com/swarafoundation" style="margin: 0 10px;">
